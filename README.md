@@ -58,6 +58,24 @@ Docker - Primeiros Passos
 ### Lista as informações do volume nomeado treinaweb.
 `docker volume inspect treinaweb`
 
+## Gerenciamento de redes entre containers
+
+### Lista os network disponíveis.
+`docker network ls`
+
+### Inspeciona informações do network bridge.
+`docker network inspect bridge`
+
+### Cria um novo network do tipo bridge chamado treinaweb.
+`docker network create --driver bridge treinaweb`
+
+### Executa um novo container, inserindo o network adapter chamado treinaweb.
+`docker run --network=treinaweb -itd --name container3 busybox`
+
+### Conecta um container já em execução a uma network, definindo um apelido dentro daquela rede.
+`docker network connect --alias c1 treinaweb container1`
+
+
 
 
 
